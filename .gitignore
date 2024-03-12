@@ -1,6 +1,9 @@
 # logs
 *.log
 
+# files
+leetcode.py
+
 # notebooks
 
 # Pytest report
