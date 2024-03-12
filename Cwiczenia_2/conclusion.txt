@@ -1,0 +1,2 @@
+BeautifulSoup can be faster for simple scraping tasks on static pages because
+it directly parses HTML content without the need for rendering JavaScript in compare to Playwright.
