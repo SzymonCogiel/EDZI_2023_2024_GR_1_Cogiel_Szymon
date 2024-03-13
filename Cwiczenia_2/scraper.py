@@ -38,7 +38,7 @@ class LinkScraper:
             return self.request_exception_handling(e)
         except ConnectionError as e:
             return self.request_exception_handling(e)
-        self.page_url.invalid = 'Valid'
+        self.page_url.status = 'Valid'
 
         bs = BeautifulSoup(response.text, 'html.parser')
         return bs.find_all('a', href=True)
@@ -48,8 +48,8 @@ class LinkScraper:
         for child in children:
             if isinstance(child, PageUrl):
                 links.append(child.url)
-                if child.invalid:
-                    print(child.invalid)
+                if child.status:
+                    print(child.status)
             if child.children:
                 links.extend(self.get_absolute_links(child))
         return links
@@ -57,7 +57,7 @@ class LinkScraper:
     def request_exception_handling(self, e):
         print(str(e))
         error_type = str(e.__class__.__name__)
-        self.page_url.invalid = error_type
+        self.page_url.status = error_type
 
         if self.page_url.url == self.root_url.url:
             raise Exception(f'Invalid root link: {error_type}')
