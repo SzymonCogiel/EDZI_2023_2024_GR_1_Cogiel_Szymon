@@ -14,11 +14,8 @@ class LinkScraper:
 
     def randomly_scrap(self, links_count: int = 100):
         while True:
-            if self.page_url.status:
-                not_visited_pages = [child for child in self.page_url.children if not child.status]
-                if len(not_visited_pages) == 0:
-                    return self.urls
-                self.page_url = not_visited_pages[randint(0, len(not_visited_pages))]
+            # Check current page status
+            self.status_validation()
 
             links = self.scrap_links_locators()
 
@@ -76,3 +73,10 @@ class LinkScraper:
 
         self.page_url = self.page_url.parent
         return self.scrap_links_locators()
+
+    def status_validation(self):
+        if self.page_url.status:
+            not_visited_pages = [child for child in self.page_url.children if not child.status]
+            if len(not_visited_pages) == 0:
+                return self.urls
+            self.page_url = not_visited_pages[randint(0, len(not_visited_pages))]

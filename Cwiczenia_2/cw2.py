@@ -7,7 +7,7 @@ def visualize_tree(node, graph=None):
     if graph is None:
         graph = Digraph()
 
-    # Zamiana znakow w URL, aby uniknac warningow Graphviz zwiazanych z portami
+    # Replace characters in URL to avoid Graphviz warnings related to ports
     node_id = str(node.url).replace(':', '_').replace('/', '_')
     graph.node(name=node_id, label=str(node.url))
 
@@ -22,7 +22,11 @@ def visualize_tree(node, graph=None):
 
 if __name__ == '__main__':
     s = LinkScraper(url='https://polon.nauka.gov.pl/aktualnosci/page/74/ ')
+
     links = s.randomly_scrap(100)
+    absolute_links = s.get_absolute_links(s.root_url.children)
     print(links)
+    print(absolute_links)
+
     dot = visualize_tree(s.root_url)
     dot.render('tree_visualization', view=True)
