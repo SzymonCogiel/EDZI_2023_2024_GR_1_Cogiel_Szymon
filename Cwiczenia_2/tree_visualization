@@ -1,0 +1,93 @@
+digraph {
+	"https___polon.nauka.gov.pl_aktualnosci_page_74_ " [label="https://polon.nauka.gov.pl/aktualnosci/page/74/ "]
+	"https___polon.nauka.gov.pl_aktualnosci_page_74_ #primary" [label="https://polon.nauka.gov.pl/aktualnosci/page/74/ #primary"]
+	"https___polon.nauka.gov.pl_aktualnosci_page_74_ " -> "https___polon.nauka.gov.pl_aktualnosci_page_74_ #primary"
+	"https___polon.nauka.gov.pl_aktualnosci_page_74_ #primary" [label="https://polon.nauka.gov.pl/aktualnosci/page/74/ #primary"]
+	"https___polon.nauka.gov.pl_" [label="https://polon.nauka.gov.pl/"]
+	"https___polon.nauka.gov.pl_aktualnosci_page_74_ " -> "https___polon.nauka.gov.pl_"
+	"https___polon.nauka.gov.pl_" [label="https://polon.nauka.gov.pl/"]
+	"https___polon.nauka.gov.pl_aktualnosci_" [label="https://polon.nauka.gov.pl/aktualnosci/"]
+	"https___polon.nauka.gov.pl_aktualnosci_page_74_ " -> "https___polon.nauka.gov.pl_aktualnosci_"
+	"https___polon.nauka.gov.pl_aktualnosci_" [label="https://polon.nauka.gov.pl/aktualnosci/"]
+	"https___polon.nauka.gov.pl_system-polon_" [label="https://polon.nauka.gov.pl/system-polon/"]
+	"https___polon.nauka.gov.pl_aktualnosci_page_74_ " -> "https___polon.nauka.gov.pl_system-polon_"
+	"https___polon.nauka.gov.pl_system-polon_" [label="https://polon.nauka.gov.pl/system-polon/"]
+	"https___polon.nauka.gov.pl_dane-publiczne_" [label="https://polon.nauka.gov.pl/dane-publiczne/"]
+	"https___polon.nauka.gov.pl_aktualnosci_page_74_ " -> "https___polon.nauka.gov.pl_dane-publiczne_"
+	"https___polon.nauka.gov.pl_dane-publiczne_" [label="https://polon.nauka.gov.pl/dane-publiczne/"]
+	"https___polon.nauka.gov.pl_harmonogram_" [label="https://polon.nauka.gov.pl/harmonogram/"]
+	"https___polon.nauka.gov.pl_aktualnosci_page_74_ " -> "https___polon.nauka.gov.pl_harmonogram_"
+	"https___polon.nauka.gov.pl_harmonogram_" [label="https://polon.nauka.gov.pl/harmonogram/"]
+	"https___polon.nauka.gov.pl_moduly_" [label="https://polon.nauka.gov.pl/moduly/"]
+	"https___polon.nauka.gov.pl_aktualnosci_page_74_ " -> "https___polon.nauka.gov.pl_moduly_"
+	"https___polon.nauka.gov.pl_moduly_" [label="https://polon.nauka.gov.pl/moduly/"]
+	"https___polon.nauka.gov.pl_dostep_" [label="https://polon.nauka.gov.pl/dostep/"]
+	"https___polon.nauka.gov.pl_aktualnosci_page_74_ " -> "https___polon.nauka.gov.pl_dostep_"
+	"https___polon.nauka.gov.pl_dostep_" [label="https://polon.nauka.gov.pl/dostep/"]
+	"https___polon2.opi.org.pl_opi" [label="https://polon2.opi.org.pl/opi"]
+	"https___polon.nauka.gov.pl_aktualnosci_page_74_ " -> "https___polon2.opi.org.pl_opi"
+	"https___polon2.opi.org.pl_opi" [label="https://polon2.opi.org.pl/opi"]
+	"https___polon.nauka.gov.pl_aktualnosci" [label="https://polon.nauka.gov.pl/aktualnosci"]
+	"https___polon.nauka.gov.pl_aktualnosci_page_74_ " -> "https___polon.nauka.gov.pl_aktualnosci"
+	"https___polon.nauka.gov.pl_aktualnosci" [label="https://polon.nauka.gov.pl/aktualnosci"]
+	"https___polon.nauka.gov.pl_kategoria-aktualnosci_komunikat-mnisw_" [label="https://polon.nauka.gov.pl/kategoria-aktualnosci/komunikat-mnisw/"]
+	"https___polon.nauka.gov.pl_aktualnosci_page_74_ " -> "https___polon.nauka.gov.pl_kategoria-aktualnosci_komunikat-mnisw_"
+	"https___polon.nauka.gov.pl_kategoria-aktualnosci_komunikat-mnisw_" [label="https://polon.nauka.gov.pl/kategoria-aktualnosci/komunikat-mnisw/"]
+	"https___polon.nauka.gov.pl_kategoria-aktualnosci_aktualnosci-pol-on_" [label="https://polon.nauka.gov.pl/kategoria-aktualnosci/aktualnosci-pol-on/"]
+	"https___polon.nauka.gov.pl_aktualnosci_page_74_ " -> "https___polon.nauka.gov.pl_kategoria-aktualnosci_aktualnosci-pol-on_"
+	"https___polon.nauka.gov.pl_kategoria-aktualnosci_aktualnosci-pol-on_" [label="https://polon.nauka.gov.pl/kategoria-aktualnosci/aktualnosci-pol-on/"]
+	"https___polon.nauka.gov.pl_aktualnosci_prace-techniczne-w-module-kierunki-studiow-i-studenci_" [label="https://polon.nauka.gov.pl/aktualnosci/prace-techniczne-w-module-kierunki-studiow-i-studenci/"]
+	"https___polon.nauka.gov.pl_kategoria-aktualnosci_aktualnosci-pol-on_" -> "https___polon.nauka.gov.pl_aktualnosci_prace-techniczne-w-module-kierunki-studiow-i-studenci_"
+	"https___polon.nauka.gov.pl_aktualnosci_prace-techniczne-w-module-kierunki-studiow-i-studenci_" [label="https://polon.nauka.gov.pl/aktualnosci/prace-techniczne-w-module-kierunki-studiow-i-studenci/"]
+	"https___polon.nauka.gov.pl_aktualnosci_udostepnilismy-formularz-z-wykorzystania-dotacji-i-formularz-z-wykorzystania-srodkow-z-funduszu-stypendialnego_" [label="https://polon.nauka.gov.pl/aktualnosci/udostepnilismy-formularz-z-wykorzystania-dotacji-i-formularz-z-wykorzystania-srodkow-z-funduszu-stypendialnego/"]
+	"https___polon.nauka.gov.pl_kategoria-aktualnosci_aktualnosci-pol-on_" -> "https___polon.nauka.gov.pl_aktualnosci_udostepnilismy-formularz-z-wykorzystania-dotacji-i-formularz-z-wykorzystania-srodkow-z-funduszu-stypendialnego_"
+	"https___polon.nauka.gov.pl_aktualnosci_udostepnilismy-formularz-z-wykorzystania-dotacji-i-formularz-z-wykorzystania-srodkow-z-funduszu-stypendialnego_" [label="https://polon.nauka.gov.pl/aktualnosci/udostepnilismy-formularz-z-wykorzystania-dotacji-i-formularz-z-wykorzystania-srodkow-z-funduszu-stypendialnego/"]
+	"https___polon.nauka.gov.pl_aktualnosci_studia-wspolne-wdrozenie-kolejnego-etapu_" [label="https://polon.nauka.gov.pl/aktualnosci/studia-wspolne-wdrozenie-kolejnego-etapu/"]
+	"https___polon.nauka.gov.pl_kategoria-aktualnosci_aktualnosci-pol-on_" -> "https___polon.nauka.gov.pl_aktualnosci_studia-wspolne-wdrozenie-kolejnego-etapu_"
+	"https___polon.nauka.gov.pl_aktualnosci_studia-wspolne-wdrozenie-kolejnego-etapu_" [label="https://polon.nauka.gov.pl/aktualnosci/studia-wspolne-wdrozenie-kolejnego-etapu/"]
+	"https___polon.nauka.gov.pl_aktualnosci_prace-techniczne-w-module-kierunki-i-studenci_" [label="https://polon.nauka.gov.pl/aktualnosci/prace-techniczne-w-module-kierunki-i-studenci/"]
+	"https___polon.nauka.gov.pl_kategoria-aktualnosci_aktualnosci-pol-on_" -> "https___polon.nauka.gov.pl_aktualnosci_prace-techniczne-w-module-kierunki-i-studenci_"
+	"https___polon.nauka.gov.pl_aktualnosci_prace-techniczne-w-module-kierunki-i-studenci_" [label="https://polon.nauka.gov.pl/aktualnosci/prace-techniczne-w-module-kierunki-i-studenci/"]
+	"https___polon.nauka.gov.pl_aktualnosci_udostepnilismy-formularz-danych-uzupelniajacych-na-potrzeby-naliczenia-subwencji-na-rok-2024_" [label="https://polon.nauka.gov.pl/aktualnosci/udostepnilismy-formularz-danych-uzupelniajacych-na-potrzeby-naliczenia-subwencji-na-rok-2024/"]
+	"https___polon.nauka.gov.pl_kategoria-aktualnosci_aktualnosci-pol-on_" -> "https___polon.nauka.gov.pl_aktualnosci_udostepnilismy-formularz-danych-uzupelniajacych-na-potrzeby-naliczenia-subwencji-na-rok-2024_"
+	"https___polon.nauka.gov.pl_aktualnosci_udostepnilismy-formularz-danych-uzupelniajacych-na-potrzeby-naliczenia-subwencji-na-rok-2024_" [label="https://polon.nauka.gov.pl/aktualnosci/udostepnilismy-formularz-danych-uzupelniajacych-na-potrzeby-naliczenia-subwencji-na-rok-2024/"]
+	"https___polon.nauka.gov.pl_aktualnosci_sprawozdawczosc-gus-za-rok-2023-brak-danych-do-sprawozdania-2_" [label="https://polon.nauka.gov.pl/aktualnosci/sprawozdawczosc-gus-za-rok-2023-brak-danych-do-sprawozdania-2/"]
+	"https___polon.nauka.gov.pl_kategoria-aktualnosci_aktualnosci-pol-on_" -> "https___polon.nauka.gov.pl_aktualnosci_sprawozdawczosc-gus-za-rok-2023-brak-danych-do-sprawozdania-2_"
+	"https___polon.nauka.gov.pl_aktualnosci_sprawozdawczosc-gus-za-rok-2023-brak-danych-do-sprawozdania-2_" [label="https://polon.nauka.gov.pl/aktualnosci/sprawozdawczosc-gus-za-rok-2023-brak-danych-do-sprawozdania-2/"]
+	"https___polon.nauka.gov.pl_aktualnosci_przedluzenie-terminu-przekazania-sprawozdan-gus_" [label="https://polon.nauka.gov.pl/aktualnosci/przedluzenie-terminu-przekazania-sprawozdan-gus/"]
+	"https___polon.nauka.gov.pl_kategoria-aktualnosci_aktualnosci-pol-on_" -> "https___polon.nauka.gov.pl_aktualnosci_przedluzenie-terminu-przekazania-sprawozdan-gus_"
+	"https___polon.nauka.gov.pl_aktualnosci_przedluzenie-terminu-przekazania-sprawozdan-gus_" [label="https://polon.nauka.gov.pl/aktualnosci/przedluzenie-terminu-przekazania-sprawozdan-gus/"]
+	"https___polon.nauka.gov.pl_aktualnosci_wprowadzono-zapowiedziana-zmiane-w-s-12_" [label="https://polon.nauka.gov.pl/aktualnosci/wprowadzono-zapowiedziana-zmiane-w-s-12/"]
+	"https___polon.nauka.gov.pl_kategoria-aktualnosci_aktualnosci-pol-on_" -> "https___polon.nauka.gov.pl_aktualnosci_wprowadzono-zapowiedziana-zmiane-w-s-12_"
+	"https___polon.nauka.gov.pl_aktualnosci_wprowadzono-zapowiedziana-zmiane-w-s-12_" [label="https://polon.nauka.gov.pl/aktualnosci/wprowadzono-zapowiedziana-zmiane-w-s-12/"]
+	"https___polon.nauka.gov.pl_aktualnosci_zmiany-w-wyliczeniach-gus-s-12_" [label="https://polon.nauka.gov.pl/aktualnosci/zmiany-w-wyliczeniach-gus-s-12/"]
+	"https___polon.nauka.gov.pl_kategoria-aktualnosci_aktualnosci-pol-on_" -> "https___polon.nauka.gov.pl_aktualnosci_zmiany-w-wyliczeniach-gus-s-12_"
+	"https___polon.nauka.gov.pl_aktualnosci_zmiany-w-wyliczeniach-gus-s-12_" [label="https://polon.nauka.gov.pl/aktualnosci/zmiany-w-wyliczeniach-gus-s-12/"]
+	"https___polon.nauka.gov.pl_kategoria-aktualnosci_wazne_" [label="https://polon.nauka.gov.pl/kategoria-aktualnosci/wazne/"]
+	"https___polon.nauka.gov.pl_aktualnosci_page_74_ " -> "https___polon.nauka.gov.pl_kategoria-aktualnosci_wazne_"
+	"https___polon.nauka.gov.pl_kategoria-aktualnosci_wazne_" [label="https://polon.nauka.gov.pl/kategoria-aktualnosci/wazne/"]
+	"https___polon.nauka.gov.pl_aktualnosci_zmiany-w-dokumentacji-importu_" [label="https://polon.nauka.gov.pl/aktualnosci/zmiany-w-dokumentacji-importu/"]
+	"https___polon.nauka.gov.pl_aktualnosci_page_74_ " -> "https___polon.nauka.gov.pl_aktualnosci_zmiany-w-dokumentacji-importu_"
+	"https___polon.nauka.gov.pl_aktualnosci_zmiany-w-dokumentacji-importu_" [label="https://polon.nauka.gov.pl/aktualnosci/zmiany-w-dokumentacji-importu/"]
+	"https___polon.nauka.gov.pl_aktualnosci_rejestr-uczelni-niepublicznych_" [label="https://polon.nauka.gov.pl/aktualnosci/rejestr-uczelni-niepublicznych/"]
+	"https___polon.nauka.gov.pl_aktualnosci_page_74_ " -> "https___polon.nauka.gov.pl_aktualnosci_rejestr-uczelni-niepublicznych_"
+	"https___polon.nauka.gov.pl_aktualnosci_rejestr-uczelni-niepublicznych_" [label="https://polon.nauka.gov.pl/aktualnosci/rejestr-uczelni-niepublicznych/"]
+	"https___polon.nauka.gov.pl_aktualnosci_page_73_" [label="https://polon.nauka.gov.pl/aktualnosci/page/73/"]
+	"https___polon.nauka.gov.pl_aktualnosci_page_74_ " -> "https___polon.nauka.gov.pl_aktualnosci_page_73_"
+	"https___polon.nauka.gov.pl_aktualnosci_page_73_" [label="https://polon.nauka.gov.pl/aktualnosci/page/73/"]
+	"https___nauka.gov.pl" [label="https://nauka.gov.pl"]
+	"https___polon.nauka.gov.pl_aktualnosci_page_74_ " -> "https___nauka.gov.pl"
+	"https___nauka.gov.pl" [label="https://nauka.gov.pl"]
+	"https___www.opi.org.pl" [label="https://www.opi.org.pl"]
+	"https___polon.nauka.gov.pl_aktualnosci_page_74_ " -> "https___www.opi.org.pl"
+	"https___www.opi.org.pl" [label="https://www.opi.org.pl"]
+	"https___polon.nauka.gov.pl_pomoc_" [label="https://polon.nauka.gov.pl/pomoc/"]
+	"https___polon.nauka.gov.pl_aktualnosci_page_74_ " -> "https___polon.nauka.gov.pl_pomoc_"
+	"https___polon.nauka.gov.pl_pomoc_" [label="https://polon.nauka.gov.pl/pomoc/"]
+	"https___polon.nauka.gov.pl_system-polon_#496667" [label="https://polon.nauka.gov.pl/system-polon/#496667"]
+	"https___polon.nauka.gov.pl_aktualnosci_page_74_ " -> "https___polon.nauka.gov.pl_system-polon_#496667"
+	"https___polon.nauka.gov.pl_system-polon_#496667" [label="https://polon.nauka.gov.pl/system-polon/#496667"]
+	"https___polon.nauka.gov.pl_deklaracja-dostepnosci-serwisu_" [label="https://polon.nauka.gov.pl/deklaracja-dostepnosci-serwisu/"]
+	"https___polon.nauka.gov.pl_aktualnosci_page_74_ " -> "https___polon.nauka.gov.pl_deklaracja-dostepnosci-serwisu_"
+	"https___polon.nauka.gov.pl_deklaracja-dostepnosci-serwisu_" [label="https://polon.nauka.gov.pl/deklaracja-dostepnosci-serwisu/"]
+}

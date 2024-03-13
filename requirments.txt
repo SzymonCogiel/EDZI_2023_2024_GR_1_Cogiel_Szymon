@@ -3,3 +3,5 @@ pandas==2.2.1
 numpy==1.26.4
 Scrapy==2.11.1
 requests==2.31.0
+pytest-playwright==0.4.4
+graphviz==0.20.1

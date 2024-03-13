@@ -14,6 +14,12 @@ class LinkScraper:
 
     def randomly_scrap(self, links_count: int = 100):
         while True:
+            if self.page_url.status:
+                not_visited_pages = [child for child in self.page_url.children if not child.status]
+                if len(not_visited_pages) == 0:
+                    return self.urls
+                self.page_url = not_visited_pages[randint(0, len(not_visited_pages))]
+
             links = self.scrap_links_locators()
 
             if len(links) == 0:
@@ -22,15 +28,20 @@ class LinkScraper:
 
             for link in links:
                 link = link['href']
-                self.urls.append(link)
-                self.page_url.add_child(url=link, status='Valid' if link.startswith('#') else None)
+                if link not in self.urls:
+                    self.urls.append(link)
+                    self.page_url.add_child(url=link, status='Valid' if link.startswith('#') else None)
 
                 if len(self.urls) >= links_count:
                     return self.urls
 
             not_visited_pages = [child for child in self.page_url.children if not child.status]
-            self.page_url = not_visited_pages[randint(0, len(not_visited_pages))] if len(
-                self.root_url.children) > 1 else self.page_url.parent.children[randint(0, len(self.page_url.parent.children))]
+            if len(not_visited_pages) > 1:
+                self.page_url = not_visited_pages[randint(0, len(not_visited_pages))]
+            elif self.page_url.url != self.root_url.url:
+                self.page_url = self.page_url.parent
+            else:
+                return self.urls
 
     def scrap_links_locators(self):
         try:

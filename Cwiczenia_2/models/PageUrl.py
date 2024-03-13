@@ -21,7 +21,6 @@ class PageUrl:
         if re.match(self.ABSOLUTE_LINK_PATTERN, self._url):
             return self._url
         elif self._url.startswith('#'):
-            # zapętlenie usunąć
             temp_url = self._parent.url + self._url
             if temp_url.count('#') > 1:
                 splitted_url = temp_url.split('#')
