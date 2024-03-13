@@ -23,13 +23,14 @@ class LinkScraper:
             for link in links:
                 link = link['href']
                 self.urls.append(link)
-                self.page_url.add_child(url=link)
+                self.page_url.add_child(url=link, status='Valid' if link.startswith('#') else None)
 
                 if len(self.urls) >= links_count:
                     return self.urls
 
-            self.page_url = self.page_url.children[randint(0, len(self.page_url.children))] if len(
-                self.root_url.children) > 1 else self.page_url.parent.children[randint(0, len(self.page_url.children))]
+            not_visited_pages = [child for child in self.page_url.children if not child.status]
+            self.page_url = not_visited_pages[randint(0, len(not_visited_pages))] if len(
+                self.root_url.children) > 1 else self.page_url.parent.children[randint(0, len(self.page_url.parent.children))]
 
     def scrap_links_locators(self):
         try:
@@ -49,9 +50,9 @@ class LinkScraper:
             if isinstance(child, PageUrl):
                 links.append(child.url)
                 if child.status:
-                    print(child.status)
+                    pass
             if child.children:
-                links.extend(self.get_absolute_links(child))
+                links.extend(self.get_absolute_links(child.children))
         return links
 
     def request_exception_handling(self, e):

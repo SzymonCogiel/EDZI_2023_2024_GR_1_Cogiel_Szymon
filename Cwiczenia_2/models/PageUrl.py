@@ -9,10 +9,12 @@ class PageUrl:
 
     status: Literal['ConnectionError', 'Valid', 'SSLError'] = None
 
-    def __init__(self, url: str, parent=None):
+    def __init__(self, url: str, parent=None, status=None):
         self._parent: PageUrl = parent
         self._url: str = url
         self.children: List[PageUrl] = []
+        if status:
+            self.status = status
 
     @property
     def url(self) -> str:
@@ -38,5 +40,5 @@ class PageUrl:
         parsed_url = urlparse(self._parent.url if self._parent else self._url)
         return f'{parsed_url.scheme}://{parsed_url.netloc}'
 
-    def add_child(self, url: str):
-        self.children.append(PageUrl(url, self))
+    def add_child(self, url: str, status=None):
+        self.children.append(PageUrl(url, self, status))
