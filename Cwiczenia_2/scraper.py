@@ -9,17 +9,23 @@ from Cwiczenia_2.models import PageUrl
 class LinkScraper:
     def __init__(self, url: str):
         self.page_url: PageUrl = PageUrl(url=url)
-        self.urls = []
+        self.urls = [url]
         self.root_url: PageUrl = self.page_url
 
     def randomly_scrap(self, links_count: int = 100):
         while True:
             # Check current page status
-            self.status_validation()
+            if self.page_url.status:
+                not_visited_pages = [child for child in self.page_url.children if not child.status]
+                if len(not_visited_pages) == 0:
+                    return self.urls
+                self.page_url = not_visited_pages[randint(0, len(not_visited_pages))]
 
             links = self.scrap_links_locators()
 
             if len(links) == 0:
+                if self.page_url == self.root_url:
+                    return self.urls
                 self.page_url = self.page_url.parent
                 continue
 
@@ -53,7 +59,7 @@ class LinkScraper:
         return bs.find_all('a', href=True)
 
     def get_absolute_links(self, children):
-        links = []
+        links = [self.root_url.url]
         for child in children:
             if isinstance(child, PageUrl):
                 links.append(child.url)
@@ -73,10 +79,3 @@ class LinkScraper:
 
         self.page_url = self.page_url.parent
         return self.scrap_links_locators()
-
-    def status_validation(self):
-        if self.page_url.status:
-            not_visited_pages = [child for child in self.page_url.children if not child.status]
-            if len(not_visited_pages) == 0:
-                return self.urls
-            self.page_url = not_visited_pages[randint(0, len(not_visited_pages))]
