@@ -7,7 +7,7 @@ class PageUrl:
 
     ABSOLUTE_LINK_PATTERN = r'^[a-zA-Z][a-zA-Z0-9+.-]*://'
 
-    status: Literal['ConnectionError', 'Valid', 'SSLError'] = None
+    status: Literal['ConnectionError', 'Valid', 'SSLError', 'RequestError', 'Timeout', 'TooManyRedirects'] = None
 
     def __init__(self, url: str, parent=None, status=None):
         self._parent: PageUrl = parent

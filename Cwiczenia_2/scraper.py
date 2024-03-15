@@ -1,5 +1,5 @@
 import requests
-from requests.exceptions import SSLError, ConnectionError
+from requests.exceptions import SSLError, ConnectionError, Timeout, TooManyRedirects
 from bs4 import BeautifulSoup
 
 from numpy.random import randint
@@ -49,10 +49,13 @@ class LinkScraper:
     def scrap_links_locators(self):
         try:
             response = requests.get(self.page_url.url)
-        except SSLError as e:
+        except (SSLError, Timeout, TooManyRedirects, ConnectionError) as e:
             return self.request_exception_handling(e)
-        except ConnectionError as e:
-            return self.request_exception_handling(e)
+
+        if 400 <= response.status_code < 600:
+            self.page_url.status = 'RequestError'
+            return []
+
         self.page_url.status = 'Valid'
 
         bs = BeautifulSoup(response.text, 'html.parser')
