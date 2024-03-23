@@ -1,0 +1,2 @@
+from Cwiczenia_3.pages.imdb import fetch_imdb_top
+from Cwiczenia_3.pages.rottentomatoes import fetch_tomatometer_score
