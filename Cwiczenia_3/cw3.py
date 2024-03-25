@@ -5,7 +5,7 @@ from tqdm import tqdm
 from concurrent.futures import ThreadPoolExecutor
 
 if __name__ == '__main__':
-    movies, imdb_ratings, years = fetch_imdb_top(100)
+    movies, imdb_ratings, years = fetch_imdb_top('https://www.imdb.com/chart/top/?ref_=nv_mv_250', 100)
     links = [f"https://www.rottentomatoes.com/search?search={movie.replace(' ', '%20')}" for movie in movies]
 
     with ThreadPoolExecutor(max_workers=10) as executor:
