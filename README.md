@@ -5,4 +5,4 @@ Visualization of part scraped data:
 ![Alt text](Cwiczenia_2/resources/Scrap_viz.png "a title")
 
 ## [Exercise 3 Comparison of title popularity between two film databases and NLP Similarity](Cwiczenia_3/)
-[Submission file](Cwiczenia_3/submission.json) with data about TOP 100 films.
+[Submission file](Cwiczenia_3/submission.json) with data about TOP 100 films. (98% Accuracy)
