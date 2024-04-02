@@ -45,5 +45,5 @@ def analyze_offers(offers_file_path):
 if __name__ == '__main__':
     offers_file_path = os.path.join('../data', 'job_offers.json')
 
-    # scrap_offer(offers_file_path)
+    scrap_offer(offers_file_path)
     analyze_offers(offers_file_path)
