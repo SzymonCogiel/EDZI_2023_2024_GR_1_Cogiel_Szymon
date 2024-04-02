@@ -1,0 +1,9 @@
+,mean_salary,median_salary,min_salary,max_salary,offers_counts
+Junior Data Engineer,13500.0,13500.0,11000,16000,1
+Data Engineer,21423.958333333332,21000.0,12000,35000,24
+Senior Data Engineer,25803.548387096773,26000.0,10800,40000,31
+Data Analyst,14162.5,13250.0,5040,25200,8
+Senior Data Analyst,22707.5,23430.0,15000,30240,4
+Data Scientist,19000.0,21000.0,12000,24000,3
+Senior Data Scientist,20847.5,20847.5,10800,29990,2
+Senior Data Architect,31198.0,31000.0,20000,39990,5

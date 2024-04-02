@@ -27,7 +27,7 @@ class JustJoinItScraper(BaseScraper):
         super().__init__(headers=headers)
         self._soup = None
 
-    def scrap(self, url):
+    def scrap(self, url) -> List[JobOffer]:
         self._soup = self.fetch_soup(url)
         return self.find_all_offers(url=url)
 

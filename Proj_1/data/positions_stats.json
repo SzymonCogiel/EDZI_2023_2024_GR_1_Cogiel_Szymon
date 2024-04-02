@@ -1,0 +1,52 @@
+{
+  "mean_salary": {
+    "Junior Data Engineer": 13500.0,
+    "Data Engineer": 21423.9583333333,
+    "Senior Data Engineer": 25803.5483870968,
+    "Data Analyst": 14162.5,
+    "Senior Data Analyst": 22707.5,
+    "Data Scientist": 19000.0,
+    "Senior Data Scientist": 20847.5,
+    "Senior Data Architect": 31198.0
+  },
+  "median_salary": {
+    "Junior Data Engineer": 13500.0,
+    "Data Engineer": 21000.0,
+    "Senior Data Engineer": 26000.0,
+    "Data Analyst": 13250.0,
+    "Senior Data Analyst": 23430.0,
+    "Data Scientist": 21000.0,
+    "Senior Data Scientist": 20847.5,
+    "Senior Data Architect": 31000.0
+  },
+  "min_salary": {
+    "Junior Data Engineer": 11000,
+    "Data Engineer": 12000,
+    "Senior Data Engineer": 10800,
+    "Data Analyst": 5040,
+    "Senior Data Analyst": 15000,
+    "Data Scientist": 12000,
+    "Senior Data Scientist": 10800,
+    "Senior Data Architect": 20000
+  },
+  "max_salary": {
+    "Junior Data Engineer": 16000,
+    "Data Engineer": 35000,
+    "Senior Data Engineer": 40000,
+    "Data Analyst": 25200,
+    "Senior Data Analyst": 30240,
+    "Data Scientist": 24000,
+    "Senior Data Scientist": 29990,
+    "Senior Data Architect": 39990
+  },
+  "offers_counts": {
+    "Junior Data Engineer": 1,
+    "Data Engineer": 24,
+    "Senior Data Engineer": 31,
+    "Data Analyst": 8,
+    "Senior Data Analyst": 4,
+    "Data Scientist": 3,
+    "Senior Data Scientist": 2,
+    "Senior Data Architect": 5
+  }
+}
