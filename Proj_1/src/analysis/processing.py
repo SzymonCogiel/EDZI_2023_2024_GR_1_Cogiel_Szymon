@@ -11,7 +11,7 @@ def calculate_frequency(offers):
 
     skill_freq = dict(sorted(skill_freq.items(), key=lambda item: item[1], reverse=True))
 
-    with open('data/skill_freq.json', 'w') as outfile:
+    with open('../data/skill_freq.json', 'w') as outfile:
         json.dump(skill_freq, outfile)
 
     return skill_freq
@@ -68,5 +68,5 @@ def calculate_statistic_per_position(df):
     for title, df in filtered_dfs_list:
         df_statistics = add_statistics(df_statistics, df, title)
 
-    df_statistics.to_csv('data/positions_stats.csv')
-    df_statistics.to_json('data/positions_stats.json')
+    df_statistics.to_csv('../data/positions_stats.csv')
+    df_statistics.to_json('../data/positions_stats.json')

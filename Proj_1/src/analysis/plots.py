@@ -6,7 +6,7 @@ def hist_plot(
         title: str = 'Popularne języki i technologie w ofertach pracy "Data"',
         xlabel: str = 'Języki/Technologie',
         ylabel: str = 'Liczba',
-        plot_path: str = 'data/common_tools_and_tech_for_data_position_chart.png'
+        plot_path: str = '../data/common_tools_and_tech_for_data_position_chart.png'
 ):
     plt.figure(figsize=(10, 8))
     bars = plt.bar(data.keys(), data.values(), color='blue')
@@ -64,5 +64,5 @@ def position_plot(data):
 
     plt.tight_layout()
 
-    plt.savefig('data/jobs_position_plot.png')
+    plt.savefig('../data/jobs_position_plot.png')
     plt.close()

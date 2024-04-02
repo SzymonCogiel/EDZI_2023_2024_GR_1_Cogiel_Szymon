@@ -38,12 +38,12 @@ def analyze_offers(offers_file_path):
     df = pd.read_json(offers_file_path)
     calculate_statistic_per_position(df)
 
-    data = pd.read_csv('data/positions_stats.csv')
+    data = pd.read_csv('../data/positions_stats.csv')
     position_plot(data)
 
 
 if __name__ == '__main__':
-    offers_file_path = os.path.join('data', 'job_offers.json')
+    offers_file_path = os.path.join('../data', 'job_offers.json')
 
-    scrap_offer(offers_file_path)
+    # scrap_offer(offers_file_path)
     analyze_offers(offers_file_path)
