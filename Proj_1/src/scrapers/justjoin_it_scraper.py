@@ -7,6 +7,11 @@ from Proj_1.src.utils.helpers import remove_non_ascii
 
 
 class JustJoinItScraper(BaseScraper):
+
+    DEFAULT_SOURCE = 'justjoin.it'
+    DEFAULT_LOCATION = 'Cracow'
+    DEFAULT_CATEGORY = 'Data'
+
     SENIORITY_MAP = {
         'mid': 'Mid/Regular',
         'junior': 'Junior',
@@ -47,16 +52,16 @@ class JustJoinItScraper(BaseScraper):
             skills_div = detailed_page_soup.find_all('div', class_='css-cjymd2')
             skills_technologies = [skill_div.find('h6').text for skill_div in skills_div] if skills_div else []
             job_offer = JobOffer(
-                source='justjoin.it',
+                source=self.DEFAULT_SOURCE,
                 link=link,
                 position=remove_non_ascii(position),
-                location='Krakow',
+                location=self.DEFAULT_LOCATION,
                 company_name=remove_non_ascii(company_name),
                 minimum_salary=minimum_salary,
                 maximum_salary=maximum_salary,
                 currency=self.CURRENCY_MAP.get(currency, 'PLN'),
                 skills_technologies=skills_technologies,
-                category='BigData/Data Science',
+                category=self.DEFAULT_CATEGORY,
                 seniority=self.SENIORITY_MAP.get(seniority, '')
             )
             offers_data.append(job_offer)

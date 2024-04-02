@@ -8,6 +8,11 @@ from Proj_1.src.utils.helpers import remove_non_ascii
 class PracujPlScraper(BaseScraper):
     OFFER_CLASS = 'default-offer'
     POSITIONED_OFFER_CLASS = 'positioned-offer'
+
+    DEFAULT_SOURCE = 'it.pracuj.pl'
+    DEFAULT_LOCATION = 'Cracow'
+    DEFAULT_CATEGORY = 'BigData/Data Science'
+
     CURRENCY_MAP = {
         'ZŁ': 'PLN',
         'EUR': 'EUR',
@@ -62,16 +67,16 @@ class PracujPlScraper(BaseScraper):
                 seniority = self.SENIORITY_MAP.get(raw_seniority, 'Senior')
 
                 job_offer = JobOffer(
-                    source='it.pracuj.pl',
+                    source=self.DEFAULT_SOURCE,
                     link=link,
                     position=remove_non_ascii(position),
-                    location='Krakow',
+                    location=self.DEFAULT_LOCATION,
                     company_name=remove_non_ascii(company_name),
                     minimum_salary=minimum_salary,
                     maximum_salary=maximum_salary,
                     currency=currency,
                     skills_technologies=skills_technologies,
-                    category='BigData/Data Science',
+                    category=self.DEFAULT_CATEGORY,
                     seniority=seniority
                 )
                 offers_data.append(job_offer)
