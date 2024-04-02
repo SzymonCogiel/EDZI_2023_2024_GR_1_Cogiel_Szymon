@@ -17,4 +17,5 @@ def check_robots_permission(func):
         else:
             print(f'Scraping is not allowed for {page_url} according to robots.txt.')
             raise Exception(f'Scraping is not allowed for this {page_url} according to robots.txt.')
+
     return wrapper
