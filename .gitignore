@@ -1,6 +1,9 @@
 # logs
 *.log
 
+# db
+*.db
+
 # files
 leetcode.py
 szymulia_gif_generator.py
