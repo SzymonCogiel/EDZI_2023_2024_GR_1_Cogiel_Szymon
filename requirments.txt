@@ -15,3 +15,7 @@ graphviz==0.20.1
 nltk==3.8.1
 fuzzywuzzy==0.18.0
 python-Levenshtein==0.25.0
+bert-extractive-summarizer==0.10.1
+
+# additional
+# torch

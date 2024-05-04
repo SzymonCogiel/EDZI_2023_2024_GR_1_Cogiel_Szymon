@@ -1,0 +1,6 @@
+It was introduced in October 2018 by researchers at Google. == Design ==
+BERT is an "encoder-only" transformer architecture. This module converts the final representation vectors into one-hot encoded tokens again. Given "[CLS] my dog is cute [SEP] how do magnets work" the model should output token [NotNext]. The high performance of the BERT model could also be attributed to the fact that it is bidirectionally trained. On October 25, 2019, Google announced that they had started applying BERT models for English language search queries within the US. In October 2020, almost every single English-based query was processed by a BERT model. == References ==
+
+
+== Further reading ==
+Rogers, Anna; Kovaleva, Olga; Rumshisky, Anna (2020). "
