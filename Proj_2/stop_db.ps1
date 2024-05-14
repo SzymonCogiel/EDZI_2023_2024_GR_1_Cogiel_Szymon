@@ -1,0 +1,2 @@
+docker stop bazka_web_scraping_EDZI
+docker container rm bazka_web_scraping_EDZI
