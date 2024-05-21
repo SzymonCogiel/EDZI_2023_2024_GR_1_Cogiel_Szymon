@@ -43,7 +43,8 @@ def create_offer(job_offer: JobOffer):
         seniority=job_offer.seniority,
         minimum_salary=job_offer.minimum_salary,
         maximum_salary=job_offer.maximum_salary,
-        skills=skills
+        skills=skills,
+        summary=job_offer.summary
     )
 
     session.add(company)

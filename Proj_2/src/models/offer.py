@@ -19,6 +19,7 @@ class Offer(Base):
     minimum_salary = Column(Float)
     maximum_salary = Column(Float)
     skills = relationship('Skill', secondary=offer_skill_table, back_populates='offers')
+    summary = Column(String, nullable=True)
 
     # Make sure this relationship is defined
     company = relationship('Company', back_populates='offers')

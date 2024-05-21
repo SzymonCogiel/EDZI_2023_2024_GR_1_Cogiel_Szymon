@@ -3,6 +3,8 @@ from typing import List
 import re
 from Proj_2.src.schemas.job_offer import JobOffer
 from Proj_2.src.utils.helpers import remove_non_ascii
+from typing import Callable
+from Proj_2.src.analysis.job_offer_summarizer import JobOfferSummarizer
 
 
 class PracujPlScraper(BaseScraper):
@@ -27,9 +29,10 @@ class PracujPlScraper(BaseScraper):
         'Senior Specialista (Senior)': 'Senior'
     }
 
-    def __init__(self, headers: dict = None):
+    def __init__(self, headers: dict = None, summarizer: Callable = JobOfferSummarizer()):
         super().__init__(headers=headers)
         self._soup = None
+        self.summarizer = summarizer
 
     def _is_offer(self, tag):
         return tag.name == 'div' and tag.get('data-test') in [self.OFFER_CLASS, self.POSITIONED_OFFER_CLASS]
@@ -51,6 +54,17 @@ class PracujPlScraper(BaseScraper):
             skills_technologies = [skill.text for skill in skills_li] if skills_li else []
             salary_pattern = re.compile(
                 r"(\d+\s?\d*)–(\d+\s?\d*)\s*(\w+)\s*(netto|brutto)?(?:\s*\(\+\s*VAT\))?\s*/\s*(godz\.|mies\.)")
+
+            section_about_project = detailed_page_soup.find('section', {'data-test': 'section-about-project'}).text
+            section_about_project = section_about_project if section_about_project else ''
+            section_responsibilities = detailed_page_soup.find('section', {'data-test': 'section-responsibilities'}).text
+            section_responsibilities = section_responsibilities if section_responsibilities else ''
+            section_requirements = detailed_page_soup.find('section', {'data-test': 'section-requirements'}).text
+            section_requirements = section_requirements if section_requirements else ''
+
+            text_to_summary = section_about_project + section_responsibilities + section_requirements
+            summary = self.summarizer(text_to_summary)
+
             match = salary_pattern.search(salary_str)
             if match:
                 minimum_salary = self._clean_and_convert_to_int(match.group(1))
@@ -77,7 +91,8 @@ class PracujPlScraper(BaseScraper):
                     currency=currency,
                     skills_technologies=skills_technologies,
                     category=self.DEFAULT_CATEGORY,
-                    seniority=seniority
+                    seniority=seniority,
+                    summary=summary
                 )
                 offers_data.append(job_offer)
         return offers_data

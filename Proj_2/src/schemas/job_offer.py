@@ -16,3 +16,4 @@ class JobOffer(BaseModel):
     skills_technologies: List[str]
     category: Literal['Data', 'BigData/Data Science']
     seniority: Literal['Junior', 'Mid/Regular', 'Senior']
+    summary: str = ''

@@ -1,7 +1,7 @@
 import re
 from functools import wraps
 from urllib.robotparser import RobotFileParser
-
+from requests.exceptions import SSLError, Timeout, TooManyRedirects, ConnectionError
 import requests
 
 
@@ -35,21 +35,21 @@ def validate_robots_permission(is_pre_valid: bool = True):
 
 
 def get_location(company_name):
-    # Base URL for Nominatim API
     base_url = "https://nominatim.openstreetmap.org/search"
-    # Parameters for the search query
     params = {
         "q": company_name,
         "format": "json",
-        "addressdetails": 1  # Include address details in the response
+        "addressdetails": 1
     }
-    # Make the request to Nominatim API
-    response = requests.get(base_url, params=params)
+
+    try:
+        response = requests.get(base_url, params=params)
+    except (SSLError, Timeout, TooManyRedirects, ConnectionError) as e:
+        raise e
+
     data = response.json()
 
-    # Check if any results were found
     if data:
-        # Extract location information from the first result
-        return data[0]["display_name"]
+        return data[0].get("display_name")
     else:
         return None

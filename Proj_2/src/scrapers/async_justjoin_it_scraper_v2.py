@@ -1,9 +1,11 @@
 import asyncio
-from typing import Dict, List
+from typing import Dict, List, Callable
 
 from playwright.async_api import async_playwright
 
+from Proj_2.src.analysis.job_offer_summarizer import JobOfferSummarizer
 from Proj_2.src.schemas.job_offer import JobOffer
+from Proj_2.src.scrapers.base_scraper import BaseScraper
 
 
 class APIScraper:
@@ -40,7 +42,7 @@ class APIScraper:
         return self.intercepted_data
 
 
-class JustJoinItScraper:
+class JustJoinItScraper(BaseScraper):
     DEFAULT_SOURCE = 'justjoin.it'
     DEFAULT_CATEGORY = 'Data'
     DEFAULT_STREET = 'ul. leca w ch... z biurem w Krk'
@@ -52,11 +54,10 @@ class JustJoinItScraper:
         'senior': 'Senior'
     }
 
-    def __init__(self, url):
+    def __init__(self, headers: dict = None, summarizer: Callable = JobOfferSummarizer(), url: str = None):
+        super().__init__(headers=headers)
         self.api_scraper = APIScraper(url)
-
-    async def scrape_data(self):
-        return await self.api_scraper.scrape_offers()
+        self.summarizer = summarizer
 
     def extract_location(self, offer):
 
@@ -84,14 +85,31 @@ class JustJoinItScraper:
     def is_offers_posted(cls, offers):
         return offers and offers.get('data', False)
 
-    def create_offers(self) -> List[JobOffer]:
-        offers = asyncio.run(self.scrape_data())
-        return [] if not self.is_offers_posted(offers) else [
-            JobOffer(
+    async def fetch_all_soups(self, urls):
+        tasks = [self.async_fetch_soup(url) for url in urls]
+        return await asyncio.gather(*tasks)
+
+    async def find_all_offers(self) -> List[JobOffer]:
+        offers = await self.api_scraper.scrape_offers()
+
+        job_offers_list = []
+
+        if not self.is_offers_posted(offers):
+            return job_offers_list
+
+        urls = ['https://justjoin.it/offers/' + next(
+            filter(lambda location: location['city'] == self.TARGET_CITY, offer['multilocation'])
+        ).get('slug') for offer in offers['data']]
+
+        soups = await self.fetch_all_soups(urls)
+
+        for soup, offer, link in zip(soups, offers['data'], urls):
+            text_to_summary = soup.find('div', {'class': 'css-6sm4q6'}).text
+            summary = self.summarizer(text_to_summary)
+
+            job_offer = JobOffer(
                 source=self.DEFAULT_SOURCE,
-                link='https://justjoin.it/offers/' + next(
-                    filter(lambda location: location['city'] == self.TARGET_CITY, offer['multilocation'])
-                ).get('slug'),
+                link=link,
                 position=offer.get('title'),
                 location=self.extract_location(offer),
                 company_name=offer.get('companyName'),
@@ -100,7 +118,12 @@ class JustJoinItScraper:
                 currency=offer.get('employmentTypes', {})[0].get('currency', '').upper(),
                 skills_technologies=offer.get('requiredSkills'),
                 category=self.DEFAULT_CATEGORY,
-                seniority=self.SENIORITY_MAP.get(offer.get('experienceLevel'), '')
+                seniority=self.SENIORITY_MAP.get(offer.get('experienceLevel'), ''),
+                summary=summary
             )
-            for offer in offers['data']
-        ]
+            job_offers_list.append(job_offer)
+
+        return job_offers_list
+
+    def scrap(self):
+        return asyncio.run(self.find_all_offers())
